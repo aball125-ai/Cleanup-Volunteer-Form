@@ -105,6 +105,9 @@ button{
 .field-error input{
     border-color:var(--color-error);
 }
+.field-valid input{
+    border-color:#216e39;
+}
 button:disabled{
     opacity:.55;
     cursor:not-allowed;

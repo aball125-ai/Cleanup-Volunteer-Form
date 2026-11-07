@@ -46,14 +46,114 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Example only</td>
-                        <td>Replace</td>
-                        <td>Yes/No</td>
-                        <td>Replace</td>
-                        <td>Replace</td>
-                        <td>Replace or N/A</td>
-                        <td>Replace or none</td>
-                        <td>Replace</td>
+                        <td>Full name</td>
+                        <td>Identify the volunteer registering.</td>
+                        <td>Yes</td>
+                        <td>Text input</td>
+                        <td>name</td>
+                        <td>autocomplete="name"</td>
+                        <td>Required, maximum 80 characters.</td>
+                        <td>Basic identifying information is necessary for registration.</td>
+                    </tr>
+                    <tr>
+                        <td>Email address</td>
+                        <td>Provide a way to contact volunteers about event details and registration updates.</td>
+                        <td>Yes</td>
+                        <td>Email input</td>
+                        <td>email</td>
+                        <td>autocomplete="email"</td>
+                        <td>Required, valid email format.</td>
+                        <td>Contact information; only an email is collected.</td>
+                    </tr>
+                    <tr>
+                        <td>Phone number</td>
+                        <td>Contact information. Email is required, while phone number is optional.</td>
+                        <td>No</td>
+                        <td>Telephone input</td>
+                        <td>phone</td>
+                        <td>autocomplete="tel"</td>
+                        <td>Optional; no rigid format pattern.</td>
+                        <td>Personal contact information; optional to minimize collection.</td>
+                    </tr>
+                    <tr>
+                        <td>Preferred shift</td>
+                        <td>Determine when the volunteer can participate.</td>
+                        <td>Yes</td>
+                        <td>Radio buttons</td>
+                        <td>shift: morning, afternoon</td>
+                        <td>N/A</td>
+                        <td>One selection required.</td>
+                        <td>Scheduling information; no sensitive details collected.</td>
+                    </tr>
+                    <tr>
+                        <td>Picking up litter</td>
+                        <td>Identify preferred cleanup activities.</td>
+                        <td>No</td>
+                        <td>Checkbox</td>
+                        <td>cleanup_tasks: litter</td>
+                        <td>N/A</td>
+                        <td>Optional selection.</td>
+                        <td>Volunteer preference; no sensitive information.</td>
+                    </tr>
+                    <tr>
+                        <td>Removing weeds</td>
+                        <td>Identify preferred cleanup activities.</td>
+                        <td>No</td>
+                        <td>Checkbox</td>
+                        <td>cleanup_tasks: weeds</td>
+                        <td>N/A</td>
+                        <td>Optional selection.</td>
+                        <td>Volunteer preference; no sensitive information.</td>
+                    </tr>
+                    <tr>
+                        <td>Cleaning picnic areas</td>
+                        <td>Identify preferred cleanup activities.</td>
+                        <td>No</td>
+                        <td>Checkbox</td>
+                        <td>cleanup_tasks: picnic</td>
+                        <td>N/A</td>
+                        <td>Optional selection.</td>
+                        <td>Volunteer preference; no sensitive information.</td>
+                    </tr>
+                    <tr>
+                        <td>Preferred cleanup location</td>
+                        <td>Determine which area the volunteer prefers to clean.</td>
+                        <td>Yes</td>
+                        <td>Select dropdown</td>
+                        <td>location</td>
+                        <td>N/A</td>
+                        <td>One selection required.</td>
+                        <td>Collects a public cleanup-area preference, not a home address.</td>
+                    </tr>
+                    <tr>
+                        <td>Experience level</td>
+                        <td>Understand the volunteer's previous cleanup experience.</td>
+                        <td>No</td>
+                        <td>Select dropdown</td>
+                        <td>experience</td>
+                        <td>N/A</td>
+                        <td>Optional selection.</td>
+                        <td>General experience information; no sensitive details.</td>
+                    </tr>
+                    <tr>
+                        <td>Cleanup supplies needed</td>
+                        <td>Helps organizers prepare supplies for volunteers.</td>
+                        <td>No</td>
+                        <td>Select dropdown</td>
+                        <td>supplies</td>
+                        <td>N/A</td>
+                        <td>No supplies needed, Gloves, Trash bags, Gloves and trash bags, Other supplies.</td>
+                        <td>General supply preference. No sensitive information.</td>
+                    </tr>
+                    <tr>
+                        <td>Additional comments</td>
+                        <td>Allow volunteers to share relevant information about registration.</td>
+                        <td>No</td>
+                        <td>Textarea</td>
+                        <td>comments</td>
+                        <td>N/A</td>
+                        <td>Optional, maximum 240 characters.</td>
+                        <td>Free-text information; volunteers will be instructed not to include sensitive personal details.</td>
                     </tr>
                 </tbody>
             </table>

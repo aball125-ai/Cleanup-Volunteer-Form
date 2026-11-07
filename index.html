@@ -3,63 +3,156 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Inclusive Form Flow</title><link rel="stylesheet" href="styles.css">
+        <title>Community Cleanup Volunteer Registration</title><link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <header class="page-header">
-            <p class="eyebrow">Application, Registration, or Request</p>
-            <h1>Replace with a specific task title</h1>
-            <p class="lede">Explain who this form is for, what it accomplishes, how long it takes, and what happens after submission.</p>
+            <p class="eyebrow">Volunteer Registration</p>
+            <h1>Community Cleanup</h1>
+            <p class="lede">This form is for community members interested in volunteering at a local cleanup drive. The form will take about 3-5 minutes to fill out. This prototype does not process registrations or send confirmation emails.</p>
         </header>
         <main>
             <section id="expectations">
                 <h2>F1 · Purpose and Expectations</h2>
-                <p>State the required/optional convention and a concise privacy notice. Use fictional test data only.</p>
+                <p>Fields marked with an asterisk (*) are required. All other fields are optional.</p>
+                <p>This prototype does not collect or store personal information. Use fictional information when testing.</p>
             </section>
-            <form action="" method="get">
+
+            <section id="requirements">
+                <h2>F4 · Requirements and Validation</h2>
+                <p>Full name, email address, preferred shift, and cleaning area are mandatory. All other details are not mandatory.</p>
+                <p>Your email should be entered in a standard format, like name@example.com. The system will detect all missing mandatory details as well as validate the email address.</p>
+                <p>The full name should not exceed 80 characters, while additional information should not be more than 240 characters.</p>
+            </section>
+
+            <form action="#" method="get">
                 <fieldset>
-                    <legend>F3 · Contact information</legend>
-                    <p class="help">Replace or extend this group based on your justified field inventory.</p>
+                    <legend>F3 · Volunteer Information</legend>
+                    <p class="help">Enter your contact information. Fields marked with an asterisk (*) are required.</p>
+
                     <div class="field">
-                        <label for="name">Name</label>
-                        <input id="name" name="name" type="text" autocomplete="name">
+                        <label for="name">Full name *</label>
+                        <input id="name" name="name" type="text" autocomplete="name" maxlength="80" required>
                     </div>
+
                     <div class="field">
-                        <label for="email">Email address (required)</label>
+                        <label for="email">Email address *</label>
                         <input id="email" name="email" type="email" autocomplete="email" required>
                     </div>
-                </fieldset>
-                <fieldset>
-                    <legend>F3 · Request choices</legend>
-                    <p class="help">Use an appropriate radio, checkbox, or select structure for the task.</p>
-                    <label class="choice">
-                        <input type="radio" name="request_type" value="option-a"> Replace with option A</label>
-                        <label class="choice"><input type="radio" name="request_type" value="option-b"> Replace with option B</label>
-                    </fieldset>
+
                     <div class="field">
-                        <label for="details">Request details</label>
-                        <p class="help" id="details-help">Explain the expected content and any limit before entry.</p>
-                        <textarea id="details" name="details" aria-describedby="details-help"></textarea>
+                        <label for="phone">Phone number</label>
+                        <input id="phone" name="phone" type="tel" autocomplete="tel">
                     </div>
-                    <button type="submit">Replace with a specific action</button>
-                </form>
+                </fieldset>
+
+                <fieldset>
+                    <legend>F3 · Volunteer Preferences</legend>
+                    <p class="help">Choose your preferred shift, cleanup location, and activities. The remaining questions are optional.</p>
+
+                    <fieldset>
+                        <legend>Preferred shift *</legend>
+                        <label class="choice">
+                            <input type="radio" name="shift" value="morning" required> Morning
+                        </label>
+                        <label class="choice">
+                            <input type="radio" name="shift" value="afternoon"> Afternoon
+                        </label>
+                    </fieldset>
+
+                    <div class="field">
+                        <label for="location">Preferred cleanup location *</label>
+                        <select id="location" name="location" required>
+                            <option value="">Select a location</option>
+                            <option value="sidewalks">Public sidewalks</option>
+                            <option value="parks">Parks</option>
+                            <option value="trails">Walking/hiking trails</option>
+                            <option value="picnic-areas">Picnic areas</option>
+                        </select>
+                    </div>
+
+                    <fieldset>
+                        <legend>Cleanup activities</legend>
+                        <label class="choice">
+                            <input type="checkbox" name="cleanup_tasks" value="litter"> Picking up litter
+                        </label>
+                        <label class="choice">
+                            <input type="checkbox" name="cleanup_tasks" value="weeds"> Removing weeds
+                        </label>
+                        <label class="choice">
+                            <input type="checkbox" name="cleanup_tasks" value="picnic"> Cleaning picnic areas
+                        </label>
+                    </fieldset>
+
+                    <div class="field">
+                        <label for="experience">Experience level</label>
+                        <select id="experience" name="experience">
+                            <option value="">Select an experience level</option>
+                            <option value="new">New volunteer</option>
+                            <option value="some">Some experience</option>
+                            <option value="experienced">Experienced</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="supplies">Cleanup supplies needed</label>
+                        <select id="supplies" name="supplies">
+                            <option value="">Select supplies</option>
+                            <option value="none">No supplies needed</option>
+                            <option value="gloves">Gloves</option>
+                            <option value="bags">Trash bags</option>
+                            <option value="both">Gloves and trash bags</option>
+                            <option value="other">Other supplies</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="comments">Additional comments</label>
+                        <p class="help" id="comments-help">Optional. Do not include sensitive personal information. Maximum 240 characters.</p>
+                        <textarea id="comments" name="comments" maxlength="240" aria-describedby="comments-help"></textarea>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Register as a Volunteer</button>
+            </form>
                 <section id="states">
                     <h2>F5 · State and Recovery Specimen</h2>
-                    <p>Document default, focus, required, valid, invalid, disabled, and a static server-returned error. Keep this section separate from the primary blank form when necessary to avoid misleading users.</p>
+                    <p>This part shows the use of the form in various states. Below are some examples that include an invalid email, error message, and disabled button. The form itself shows two states, namely the default and required states. The focus state on keyboard navigation will also be shown in the form.</p>
+                     <ul>
+                        <li><strong>Default:</strong> Fields appear empty and ready for entry.</li>
+                        <li><strong>Focus:</strong> The currently selected field has a visible focus indicator.</li>
+                        <li><strong>Required:</strong> Required fields are identified with an asterisk and checked before submission.</li>
+                        <li><strong>Valid:</strong> The valid email example shows an accepted email format.</li>
+                        <li><strong>Invalid:</strong> The invalid email example identifies the problem and explains how to correct it.</li>
+                        <li><strong>Disabled:</strong> The disabled button demonstrates a control that cannot currently be used.</li>
+                        <li><strong>Server-returned error:</strong> The static error example shows how an error would appear after a submission attempt.</li>
+                    </ul>
+                    <div class="field field-valid">
+                        <label for="valid-example">Email address</label>
+                        <input id="valid-example" type="email" value="ashley@example.com">
+                    </div>
+                    <div class="field">
+                        <label for="preserved-name">Full name</label>
+                        <input id="preserved-name" type="text" value="Ashley Example">
+                    </div>
                     <div class="error-summary">
-                        <h3>There is a problem with the fictional submission</h3>
+                        <h3>There is a problem with your submission</h3>
+                        <p>Your registration could not be processed. Please correct the following error.</p>
                         <p><a href="#error-example">Email address needs attention</a></p>
                     </div>
                     <div class="field field-error">
                         <label for="error-example">Email address</label>
-                        <input id="error-example" type="email" value="alex.example" aria-invalid="true" aria-describedby="error-message">
+                        <input id="error-example" type="email" value="ashley.example" aria-invalid="true" aria-describedby="error-message">
                         <p id="error-message"><strong>Error:</strong> Enter an address in the format name@example.com.</p>
                     </div>
                     <button type="button" disabled>Disabled example</button>
                 </section>
                 <section id="documentation">
                     <h2>F2 and F6 · Planning and Evidence</h2>
-                    <p>Link your field inventory, state matrix, fictional test-data list, completed test record, and AI disclosure.</p>
+                    <p>The field inventory is provided as a separate HTML file. The completed test record, fictional test data, and AI disclosure are included in the PDF documentation in the submission ZIP.</p>
+                    <ul>
+                        <li><a href="field-inventory-template.html">Field Inventory</a></li>
+                    </ul>
                 </section>
             </main>
         </body>
